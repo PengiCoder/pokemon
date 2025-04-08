@@ -52,8 +52,7 @@
         .type-ice { background-color: #96D9D6; color: black; } .dark .type-ice { background-color: #87c3c0; color: #333; }
         .type-fighting { background-color: #C22E28; color: white; } .dark .type-fighting { background-color: #af2923; }
         .type-poison { background-color: #A33EA1; color: white; } .dark .type-poison { background-color: #933891; }
-        .type-ground { background-color: #E2BF65; color: black; } .dark .type-ground { background-color: #cba
-f5b; color: #333; }
+        .type-ground { background-color: #E2BF65; color: black; } .dark .type-ground { background-color: #cbaf5b; color: #333; } /* Fixed hex typo */
         .type-flying { background-color: #A98FF3; color: white; } .dark .type-flying { background-color: #9981db; }
         .type-psychic { background-color: #F95587; color: white; } .dark .type-psychic { background-color: #e04d79; }
         .type-bug { background-color: #A6B91A; color: white; } .dark .type-bug { background-color: #95a617; }
@@ -234,6 +233,7 @@ f5b; color: #333; }
         // --- Dark Mode Logic ---
         /** Applies the theme based on preference */
         function applyTheme(theme) {
+            console.log(`Applying theme: ${theme}`); // DEBUG LOG ADDED
             if (theme === 'dark') {
                 document.documentElement.classList.add('dark');
                 themeIconLight.classList.remove('hidden'); // Show sun icon for toggle
@@ -249,6 +249,7 @@ f5b; color: #333; }
         function toggleTheme() {
             const currentTheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            console.log(`Toggling theme from ${currentTheme} to ${newTheme}`); // DEBUG LOG ADDED
             localStorage.setItem('theme', newTheme); // Save preference
             applyTheme(newTheme);
         }
